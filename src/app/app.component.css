@@ -1,0 +1,16 @@
+/* General styles for the navbar */
+.navbar {
+  background-color: #3a925c;
+  color: #ffffff;
+  padding: 10px 20px;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Navbar title styles */
+.navbar-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}

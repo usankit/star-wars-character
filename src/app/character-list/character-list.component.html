@@ -1,0 +1,62 @@
+<div style="display: flex; padding: 1rem;">
+
+  <div class="filter-container">
+    <div style="display: flex;justify-content: center; color:#3a925c ;">
+      <h3>FILTER</h3>
+    </div>
+    <div class="filter-item">
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="filters.name" (input)="onFilterChange()" placeholder="Filter by name">
+    </div>
+    <div class="filter-item">
+      <label for="movie">Movie:</label>
+      <select id="movie" [(ngModel)]="filters.movie" (change)="onFilterChange()">
+        <option value="">Select a movie</option>
+        <option *ngFor="let movie of movies" [value]="movie">{{ movie }}</option>
+      </select>
+    </div>
+    <div class="filter-item">
+      <label for="vehicle">Vehicle:</label>
+      <select id="vehicle" [(ngModel)]="filters.vehicle" (change)="onFilterChange()">
+        <option value="">Select a vehicle</option>
+        <option *ngFor="let vehicle of vehicles" [value]="vehicle">{{ vehicle }}</option>
+      </select>
+    </div>
+    <div class="filter-item">
+      <label for="starship">Starship:</label>
+      <select id="starship" [(ngModel)]="filters.starship" (change)="onFilterChange()">
+        <option value="">Select a starship</option>
+        <option *ngFor="let starship of starships" [value]="starship">{{ starship }}</option>
+      </select>
+    </div>
+    <div class="filter-item">
+      <label for="birthYear">Birth Year:</label>
+      <select id="birthYear" [(ngModel)]="filters.birthYear" (change)="onFilterChange()">
+        <option value="">Select a birth year</option>
+        <option *ngFor="let year of birthYears" [value]="year">{{ year }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="characters-list">
+    <table>
+      <thead>
+        <tr>
+          <th>Sr. No.</th>
+          <th>Name</th>
+          <th>Species</th>
+          <th>Birth Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let character of filteredCharacters; let i = index" (click)="selectCharacter(character)">
+          <td>{{ i + 1 }}</td>
+          <td>{{ character.name }}</td>
+          <td>{{ character.species }}</td>
+          <td>{{ character.birth_year }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

@@ -1,0 +1,39 @@
+<!-- <div *ngIf="character">
+  <h2>{{ character.name }}</h2>
+  <p>Species: {{ species }}</p>
+  <p>Movies: {{ movies.join(', ') }}</p>
+  <p>Starships: {{ starships.join(', ') }}</p>
+</div> -->
+
+
+<div *ngIf="character">
+  <h2>{{ character.name }}</h2>
+  <p>Birth Year: {{ character.birth_year }}</p>
+
+  <div>
+    <h3>Films:</h3>
+    <ul>
+      <li *ngFor="let film of character.films">
+        <a [href]="film">{{ film }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Vehicles:</h3>
+    <ul>
+      <li *ngFor="let vehicle of character.vehicles">
+        <a [href]="vehicle">{{ vehicle }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Starships:</h3>
+    <ul>
+      <li *ngFor="let starship of character.starships">
+        <a [href]="starship">{{ starship }}</a>
+      </li>
+    </ul>
+  </div>
+</div>

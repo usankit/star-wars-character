@@ -1,0 +1,34 @@
+<div class="filter-container">
+  <div class="filter-item">
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="filters.name" (input)="onFilterChange()" placeholder="Filter by name">
+  </div>
+  <div class="filter-item">
+    <label for="movie">Movie:</label>
+    <select id="movie" [(ngModel)]="filters.movie" (change)="onFilterChange()">
+      <option value="">Select a movie</option>
+      <option *ngFor="let movie of movies" [value]="movie">{{ movie }}</option>
+    </select>
+  </div>
+  <div class="filter-item">
+    <label for="vehicle">Vehicle:</label>
+    <select id="vehicle" [(ngModel)]="filters.vehicle" (change)="onFilterChange()">
+      <option value="">Select a vehicle</option>
+      <option *ngFor="let vehicle of vehicles" [value]="vehicle">{{ vehicle }}</option>
+    </select>
+  </div>
+  <div class="filter-item">
+    <label for="starship">Starship:</label>
+    <select id="starship" [(ngModel)]="filters.starship" (change)="onFilterChange()">
+      <option value="">Select a starship</option>
+      <option *ngFor="let starship of starships" [value]="starship">{{ starship }}</option>
+    </select>
+  </div>
+  <div class="filter-item">
+    <label for="birthYear">Birth Year:</label>
+    <select id="birthYear" [(ngModel)]="filters.birthYear" (change)="onFilterChange()">
+      <option value="">Select a birth year</option>
+      <option *ngFor="let year of birthYears" [value]="year">{{ year }}</option>
+    </select>
+  </div>
+</div>
